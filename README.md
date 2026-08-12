@@ -23,13 +23,13 @@ Attractions that are CLOSED or under REFURBISHMENT are skipped. DOWN rides are s
 **Raspberry Pi** (from your mlb-led-scoreboard directory):
 
 ```bash
-sudo venv/bin/pip install git+https://github.com/jc214809/lightninglane-led-plugin.git
+sudo venv/bin/pip install git+https://github.com/mcangeli/lightninglane-led-plugin.git
 ```
 
 **Mac / local development** (editable install):
 
 ```bash
-git clone https://github.com/jc214809/lightninglane-led-plugin.git
+git clone https://github.com/mcangeli/lightninglane-led-plugin.git
 cd /path/to/mlb-led-scoreboard
 venv/bin/pip install -e /path/to/lightninglane-led-plugin
 ```
@@ -39,7 +39,7 @@ venv/bin/pip install -e /path/to/lightninglane-led-plugin
 To update to the latest version, re-run the install command with `--force-reinstall` (from your mlb-led-scoreboard directory):
 
 ```bash
-sudo venv/bin/pip install --force-reinstall git+https://github.com/jc214809/lightninglane-led-plugin.git
+sudo venv/bin/pip install --force-reinstall git+https://github.com/mcangeli/lightninglane-led-plugin.git
 ```
 
 > **Note:** PyPI publishing is planned for a future release. Once available, updating will simply be `sudo venv/bin/pip install --upgrade lightninglane-led-plugin`.
@@ -87,3 +87,5 @@ The plugin registers itself via the `bullpen.mlbled.plugin` entry point. When bu
 - **`Config`** — reads `parks`, `refresh_seconds`, and `trip_dates` from `config.json`
 - **`Data`** — on first update, fetches the WDW park list then starts a daemon background thread that polls live attraction wait times on the configured interval
 - **`Renderer`** — runs a phase-based cycle: Mickey intro → trip countdown (if active) → parks; resumes where it left off if the scoreboard rotates away mid-cycle
+
+** Thank you to @JC214809 for the ground work, I updated his code to limit pillow to match mlb-led-scoreboard in an attempt to get this to work...
